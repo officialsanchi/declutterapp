@@ -18,6 +18,8 @@ public class StoreProduct {
     private LocalDateTime createdAt;
     private String categoryId;
     private String status;
+    private  StoreCategory storeCategory;
+    private StoreUser storeUser;
 
 
 
