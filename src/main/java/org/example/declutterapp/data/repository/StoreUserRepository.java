@@ -1,4 +1,7 @@
 package org.example.declutterapp.data.repository;
 
-public interface StoreUserRepository {
+import org.example.declutterapp.data.model.StoreUser;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface StoreUserRepository extends MongoRepository<StoreUser, String> {
 }
