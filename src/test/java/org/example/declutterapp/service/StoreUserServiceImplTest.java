@@ -9,14 +9,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
-class StoreUserServiceImplTest {
+public class StoreUserServiceImplTest {
     @Autowired
-    private StoreUserServiceImpl storeUserServiceImpl;
+    private StoreUserService storeUserService;
     @Autowired
     private StoreUserRepository storeUserRepository;
 
     @Test
-    void registerUser() {
+   public  void registerUserTest() {
         StoreUserRegisterRequest storeUserRegisterRequest = new StoreUserRegisterRequest();
         storeUserRegisterRequest.setName( storeUserRegisterRequest.getName() );
         storeUserRegisterRequest.setEmail( storeUserRegisterRequest.getEmail() );
@@ -24,8 +24,9 @@ class StoreUserServiceImplTest {
         storeUserRegisterRequest.setAddress( storeUserRegisterRequest.getAddress() );
         storeUserRegisterRequest.setPhoneNumber( storeUserRegisterRequest.getPhoneNumber() );
         storeUserRegisterRequest.setCreatedAt( storeUserRegisterRequest.getCreatedAt() );
-        StoreUserRegisterResponse storeUserRegisterResponse =  storeUserServiceImpl.registerUser( storeUserRegisterRequest );
-        assertEquals(storeUserRegisterResponse.getMessage(), "Account created Successfully");
+        StoreUserRegisterResponse storeUserRegisterResponse =  storeUserService.registerUser( storeUserRegisterRequest );
+        assertNotNull(storeUserRegisterResponse);
+        assertEquals( storeUserRegisterResponse.getMessage(), "Account created Successfully" );
     }
 
     @Test
