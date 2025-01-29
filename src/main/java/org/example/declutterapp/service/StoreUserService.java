@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public interface StoreUserService {
     StoreUserRegisterResponse registerUser(StoreUserRegisterRequest storeUserRegisterRequest);
-   StoreUserDeleteResponse deleteUser(StoreUserDeleteRequest storeUserDeleteRequest);
-   StoreUserLoginResponse login(StoreUserLoginRequest storeUserLoginRequest);
+   StoreUserDeleteResponse deleteUser(String id);
+   boolean login(String email, String password);
    StoreUserLogoutResponse logout( StoreUserLogoutRequest storeUserLogoutRequest);
    StoreUserUpdateResponse updateUser(StoreUserUpdateRequest storeUserUpdateRequest);
 }
